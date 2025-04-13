@@ -1,30 +1,82 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+
+  <div class="container-header">
+
+    <LogoBlock/>
+
+    <nav>
+      <router-link to="/" class="itemHeader">Home</router-link> 
+      <router-link to="/basket" class="itemHeader">Basket</router-link> 
+      
+     
+      
+    </nav>
+
+
+    <CallNumber/>
+    
+
+
+
+</div>
+
+<router-view/>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import CallNumber from './components/CallNumber.vue';
+import LogoBlock from './components/LogoBlock.vue';
+
+
+
+export default{
+  name:"App",
+  components:{
+    LogoBlock, CallNumber
+}
 }
 
-nav {
-  padding: 30px;
+
+</script>
+
+
+
+<style scoped>
+
+
+nav a.router-link-exact-active{
+  color:#000;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.counter{
+  position:absolute;
+  bottom:895px;
+  color:#000;
+  
+
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+*{
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.container-header{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+
+
+
+}
+
+
+.itemHeader{
+  margin-right: 24px;
+  color: #0000002f;
+  font-size: 18px;
 }
 </style>

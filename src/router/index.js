@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import BasketView from '@/views/BasketView.vue'
 
 const routes = [
   {
@@ -7,6 +8,16 @@ const routes = [
     name: 'home',
     component: HomeView
   },
+
+
+  {
+    path: '/basket',
+    name: 'basket',
+    component: BasketView
+  },
+  
+
+
   {
     path: '/about',
     name: 'about',
