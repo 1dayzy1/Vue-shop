@@ -6,8 +6,10 @@ export default createStore({
     counter:0,
     checkModal:false, 
     basketdelete:0,
-   
-    modalbasket:0
+    shownotification:false,
+    modalbasket:0,
+    OpenModalCall:false,
+    
   },
   getters: {
 
@@ -22,7 +24,7 @@ export default createStore({
     },
 
     DeleteItem(){
-      console.log(this.state.basketdelete);
+      
       this.state.basket.splice(this.state.basketdelete,1);
       this.state.counter--;
     },

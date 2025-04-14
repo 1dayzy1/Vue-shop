@@ -1,18 +1,27 @@
 <template>
     
     
+    <div class="modal">
+        
+        <CardDesc
+        :it="$store.state.modalbasket"
+        />
+   
+  </div>
+
+
+    <ModalCall/>
+
+  
+
+
       <div class="container">
         
         <HomeLand/>
       
       </div>
 
-      <div class="modal">
-        
-        <CardDesc
-        :it="$store.state.modalbasket"
-    
-    /></div>
+      
       
 
       <div class="container-card">
@@ -45,6 +54,12 @@
     </div>
 
 
+    <NotificationBlock/>
+
+
+
+    
+    
     
     
 </template>
@@ -53,6 +68,8 @@
 import CardBlock from '@/components/CardBlock.vue';
 import CardDesc from '@/components/CardDesc.vue';
 import HomeLand from '@/components/HomeLand.vue';
+import ModalCall from '@/components/ModalCall.vue';
+import NotificationBlock from '@/components/NotificationBlock.vue';
 import items from '@/data/item';
 
 // @ is an alias to /src
@@ -60,7 +77,7 @@ import items from '@/data/item';
 export default {
   name: 'HomeView',
   components: {
-    HomeLand,CardBlock,CardDesc
+    HomeLand,CardBlock,CardDesc,NotificationBlock,ModalCall
   },
 
   data(){
@@ -84,12 +101,13 @@ export default {
 
 
 
+
 .container{
   background-image: url('../assets/img/bgimage.png');
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 798px;
+  height: 100vh;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -105,5 +123,13 @@ export default {
   flex-wrap: wrap;
 }
 
+
+.modal{
+  position: fixed;
+  
+  
+  
+  
+}
 
 </style>

@@ -15,7 +15,11 @@
                 <div class="container-button">
                     <button class="button-add"  @click="AddToBasket()">Добавить в коризну</button>
                     <button class="button-open"  @click="OpenModal()">Доп.информация</button>
+
                 </div>
+
+                
+
 
             </div>
 
@@ -39,7 +43,14 @@ export default{
 
     methods:{
         AddToBasket(){
+            this.$store.state.shownotification = true;
             this.$store.commit('AddToBasket',this.it)
+            
+
+            setTimeout(() => {
+                this.$store.state.shownotification = false;
+                
+            }, 3000);
         },
 
         OpenModal(){

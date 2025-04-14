@@ -7,9 +7,9 @@
 
 
     </div>
-    <div class="button-header">Заказать звонок</div>
+    <div class="button-header" @click="OpenModalCall()" v>Заказать звонок</div>
 
-
+    
 
 </template>
 
@@ -21,6 +21,11 @@
 
 export default{
     name:"CallNumber",
+    methods:{
+        OpenModalCall(){
+            this.$store.state.OpenModalCall = true;
+        }
+    }
 
 }
 
@@ -30,6 +35,10 @@ export default{
 
 
 <style scoped>
+
+
+
+
 
 .sale{
     color: #00000073;
@@ -58,6 +67,7 @@ export default{
     border-radius: 6px;
     margin-left:32px ;
     background-color:#FFA400 ;
+    cursor: pointer;
 }
 
 </style>

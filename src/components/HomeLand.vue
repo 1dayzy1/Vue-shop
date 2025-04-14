@@ -16,7 +16,7 @@
         <div class="modal-block">
             <p class="mod-text">Ищите квартиру?<br>  Оставьте заявку на подбор квартиры <br> прямо сейчас и мы поможем!</p>
 
-            <div class="button-modal">Оставить заявку</div>
+            <div class="button-modal" >Оставить заявку</div>
             <p class="beta-text">от 15 дней пробный период</p>
         </div>
     </div>

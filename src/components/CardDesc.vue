@@ -43,7 +43,12 @@ export default{
             this.$store.commit('CloseModal',this.it)
         },
         AddToBasket(){
-            this.$store.commit('AddToBasket',this.it)
+            this.$store.state.shownotification = true;
+            this.$store.commit('AddToBasket',this.it);
+            setTimeout(() => {
+                this.$store.state.shownotification = false;
+                
+            }, 3000);
         },
     }
 

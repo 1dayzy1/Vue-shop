@@ -13,6 +13,7 @@
                 <p class="street-home">{{ it.street }}</p>
                 <p class="price-home">{{ it.price }}</p>
                 
+                
                 <button class="btn-delete" @click="DeleteItem()">Удалить</button>
                 
 
