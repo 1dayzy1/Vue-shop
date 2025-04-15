@@ -44,17 +44,12 @@ export default{
 <style scoped>
 
 
+
 nav a.router-link-exact-active{
   color:#000;
 }
 
-.counter{
-  position:absolute;
-  bottom:895px;
-  color:#000;
-  
 
-}
 
 *{
   padding: 0;
@@ -79,4 +74,12 @@ nav a.router-link-exact-active{
   color: #0000002f;
   font-size: 18px;
 }
+
+@media (max-width:730px) {
+  .container-header{
+    display:none;
+  }
+}
+
+
 </style>

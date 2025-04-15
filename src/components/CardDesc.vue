@@ -85,7 +85,7 @@ export default{
 
 
 .modal{
-    padding: 150px;
+    padding: 50px;
     background-color: hsla(0, 0%, 0%, 0.5);
     position: fixed;
     display: none;

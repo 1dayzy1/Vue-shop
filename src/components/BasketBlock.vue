@@ -15,6 +15,8 @@
                 
                 
                 <button class="btn-delete" @click="DeleteItem()">Удалить</button>
+                <button class="btn-delete" @click="RemoveItem()">Уменьшить</button>
+                
                 
 
 
@@ -39,8 +41,23 @@ export default{
     props:['it', 'index'],
     methods:{
         DeleteItem(){
-            this.$store.state.basketdelete = (this.index)
-            this.$store.commit("DeleteItem", this.it)
+            this.$store.state.shownotification = true;
+
+            this.$store.state.basketdelete = (this.index);
+
+            this.$store.commit("DeleteItem", this.it);
+
+            setTimeout(() => {
+                this.$store.state.shownotification = false;
+                
+            }, 3000);
+        },
+
+
+        RemoveItem(){
+            this.$store.commit('RemoveItem',this.it)
+        }
+
         }
     }
 
@@ -49,7 +66,7 @@ export default{
 
 
 
-}
+
 
 </script>
 

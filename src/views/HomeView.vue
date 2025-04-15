@@ -57,6 +57,9 @@
     <NotificationBlock/>
 
 
+    <SliderBlock/>
+
+
 
     
     
@@ -70,6 +73,7 @@ import CardDesc from '@/components/CardDesc.vue';
 import HomeLand from '@/components/HomeLand.vue';
 import ModalCall from '@/components/ModalCall.vue';
 import NotificationBlock from '@/components/NotificationBlock.vue';
+import SliderBlock from '@/components/SliderBlock.vue';
 import items from '@/data/item';
 
 // @ is an alias to /src
@@ -77,7 +81,7 @@ import items from '@/data/item';
 export default {
   name: 'HomeView',
   components: {
-    HomeLand,CardBlock,CardDesc,NotificationBlock,ModalCall
+    HomeLand,CardBlock,CardDesc,NotificationBlock,ModalCall,SliderBlock,
   },
 
   data(){
@@ -115,6 +119,13 @@ export default {
   
 }
 
+
+@media (max-width:730px) {
+  .container{
+    flex-direction: column;
+  }
+}
+
 .container-card{
   display: flex;
   justify-content: space-around;
@@ -126,6 +137,8 @@ export default {
 
 .modal{
   position: fixed;
+  left: 15vw;
+
   
   
   

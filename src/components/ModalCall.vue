@@ -54,8 +54,8 @@ export default{
 
 .modalcall{
     position: fixed;
-    width: 700px;
-    height: 500px;
+    width: 36vw;
+    height: 45vh;
     border-radius: 20px;
     background-color: #cfcfcfc9;
     left: 30vw;
@@ -70,7 +70,7 @@ form{
 
 
 .close-modal{
-    margin-left: 35vw;
+    margin-left: 30vw;
     margin-top: 1vh;
     transition: 300ms;
 }

@@ -23,7 +23,7 @@
 
 
     
-
+    <DeleteNotification/>
 
 </template>
 
@@ -31,12 +31,13 @@
 
 <script>
 import BasketBlock from '@/components/BasketBlock.vue';
+import DeleteNotification from '@/components/DeleteNotification.vue';
 
 
 
 export default{
     name:"BasketView",
-    components:{BasketBlock},
+    components:{BasketBlock, DeleteNotification},
     computed:{
 
         items(){

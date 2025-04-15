@@ -6,11 +6,30 @@
         <section class="section">
 
             <div class="block">
+                
 
-                <img :src="require('@/assets/img/' + it.img)" class="img-home">
+                <div class="block-slider">
+
+                    <button @click="prevSlide()" class="button-slide prevSlide">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+
+                    <img :src="require('@/assets/img/' + indexImage[index].image)" class="img-home">
+
+                    <button @click="nextSlide()" class="button-slide nextSlide">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+
+                </div>
+
+                
                 <p class="name-home">{{it.name  }}</p>
                 <p class="street-home">{{ it.street }}</p>
                 <p class="price-home">{{ it.price }}</p>
+
+                <p v-if="productQuant" class="count-item">У вас в корзине:{{ productQuant }}</p>
+
 
                 <div class="container-button">
                     <button class="button-add"  @click="AddToBasket()">Добавить в коризну</button>
@@ -34,12 +53,20 @@
 
 
 <script>
+import { ref } from 'vue';
+
 
 
 
 export default{
     name:"CardBlock",
     props:['it'],
+
+    computed:{
+        productQuant(){
+            return this.$store.getters.productQuantity(this.it);
+        }
+    },
 
     methods:{
         AddToBasket(){
@@ -55,7 +82,38 @@ export default{
 
         OpenModal(){
             this.$store.commit('OpenModal',this.it)
+        },
+
+
+
+    },
+
+    setup(){
+        const indexImage = ref([
+            {image:'img-home1.png'},
+            {image:'img-home2.png'},
+            {image:'img-home3.png'}
+            
+        ]);
+
+
+        let index = ref(0);
+
+        const prevSlide = () => {
+            index.value = (index.value - 1 + indexImage.value.length) % indexImage.value.length;
         }
+
+        const nextSlide = () => {
+            index.value = (index.value + 1) % indexImage.value.length;
+        }
+
+        return{
+            indexImage,
+            index,
+            prevSlide,
+            nextSlide
+        }
+
     }
 
 
@@ -66,6 +124,28 @@ export default{
 
 
 <style scoped>
+
+
+
+
+.button-slide{
+    
+    
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    top: 50px;
+    display: none;
+    
+
+}
+
+
+
+.block:hover .button-slide{
+    display: inline-block;
+}
+
 
 
 .img-home{
@@ -142,11 +222,12 @@ export default{
 }
 
 .block{
+    
     transition: 200ms;
     border-radius: 20px;
     width: 400px;
     text-align: center;
-    height: 580px;
+    height: 650px;
 }
 
 .block:hover{
@@ -155,6 +236,11 @@ export default{
 
 
 .block:hover .price-home{
+    color: #fff;
+}
+
+
+.block:hover .count-item{
     color: #fff;
 }
 
