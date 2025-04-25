@@ -5,10 +5,10 @@
     <LogoBlock/>
 
     <nav>
-      <router-link to="/" class="itemHeader">Home</router-link> 
-      <router-link to="/basket" class="itemHeader">Basket</router-link> 
+      <router-link to="/" class="itemHeader">Главная</router-link> 
+      <!-- <router-link to="/basket" class="itemHeader">Basket</router-link>  -->
       
-     
+      
       
     </nav>
 
@@ -34,6 +34,9 @@ export default{
   components:{
     LogoBlock, CallNumber
 }
+
+
+
 }
 
 
@@ -50,10 +53,7 @@ nav a.router-link-exact-active{
 }
 
 
-
 *{
-  padding: 0;
-  margin: 0;
   list-style-type: none;
   text-decoration: none;
 }
@@ -62,6 +62,7 @@ nav a.router-link-exact-active{
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding: 50px;
 
 
 

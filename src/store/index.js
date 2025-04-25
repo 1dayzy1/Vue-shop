@@ -9,7 +9,8 @@ export default createStore({
     shownotification:false,
     modalbasket:0,
     OpenModalCall:false,
-    not:0
+    not:0,
+    openDrawer:false,
     
   },
   getters: {

@@ -41,10 +41,12 @@ export default{
     computed:{
 
         items(){
-            return this.$store.getters.openbasket
+            return this.$store.getters.openbasket 
         }
         
-    }
+    },
+
+    
 }
 
 </script>

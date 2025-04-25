@@ -36,6 +36,8 @@
 <script>
 
 export default{
+
+    
     name:"CardDesc",
     props:['active', 'it'],
     methods:{
@@ -58,6 +60,8 @@ export default{
 
 
 <style scoped>
+
+
 
 
 .desc-home{
@@ -99,6 +103,7 @@ export default{
     
     display: block;
     display: flex;
+
     position: absolute;
     
     bottom: -900px;
@@ -156,5 +161,15 @@ export default{
 .button-add:hover{
     background-color:#b69862 ;
 }
+
+
+
+/* @media (max-width:730px) {
+    .modal{
+        
+        flex-direction: column;
+    }
+} */
+
 
 </style>

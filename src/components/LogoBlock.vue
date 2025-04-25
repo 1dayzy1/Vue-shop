@@ -1,7 +1,7 @@
 <template>
 
 
-<a href="/" class="logo">Продажа квартир</a>
+<a href="/" class="logo">TrapStyle Shop</a>
 
 
 </template>

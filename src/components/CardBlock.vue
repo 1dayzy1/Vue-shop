@@ -1,6 +1,9 @@
 <template>
 
 
+    
+
+
     <div class="container-card">
 
         <section class="section">
@@ -10,30 +13,33 @@
 
                 <div class="block-slider">
 
-                    <button @click="prevSlide()" class="button-slide prevSlide">
+                    <!-- <button @click="prevSlide()" class="button-slide prevSlide">
                         <i class="fas fa-chevron-left"></i>
-                    </button>
+                    </button> -->
 
-                    <img :src="require('@/assets/img/' + indexImage[index].image)" class="img-home">
+                    
 
-                    <button @click="nextSlide()" class="button-slide nextSlide">
+                    <!-- <button @click="nextSlide()" class="button-slide nextSlide">
                         <i class="fas fa-chevron-right"></i>
-                    </button>
+                    </button> -->
 
 
                 </div>
 
+
+                <img :src="it.imageUrl" class="img-home">
                 
-                <p class="name-home">{{it.name  }}</p>
-                <p class="street-home">{{ it.street }}</p>
+                <p class="name-home">{{it.title }}</p>
+                
                 <p class="price-home">{{ it.price }}</p>
 
                 <p v-if="productQuant" class="count-item">У вас в корзине:{{ productQuant }}</p>
 
 
                 <div class="container-button">
+                    <!-- <button @click="opendata()">Показать данные</button> --> 
                     <button class="button-add"  @click="AddToBasket()">Добавить в коризну</button>
-                    <button class="button-open"  @click="OpenModal()">Доп.информация</button>
+                    <!-- <button class="button-open"  @click="OpenModal()">Доп.информация</button> -->
 
                 </div>
 
@@ -69,6 +75,9 @@ export default{
     },
 
     methods:{
+
+        
+
         AddToBasket(){
             this.$store.state.shownotification = true;
             this.$store.commit('AddToBasket',this.it)
@@ -92,12 +101,14 @@ export default{
         const indexImage = ref([
             {image:'img-home1.png'},
             {image:'img-home2.png'},
-            {image:'img-home3.png'}
+            {image:'img-home3.png'},
+            {image:'img-home4.png'},
+            {image:'img-home5.png'},
             
         ]);
 
 
-        let index = ref(0);
+        const index = ref(0);
 
         const prevSlide = () => {
             index.value = (index.value - 1 + indexImage.value.length) % indexImage.value.length;
@@ -126,7 +137,13 @@ export default{
 <style scoped>
 
 
-
+.img-home{
+    width: 226px;
+    height: 200px;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 15%;
+}
 
 .button-slide{
     
@@ -136,6 +153,7 @@ export default{
     cursor: pointer;
     top: 50px;
     display: none;
+    
     
 
 }
@@ -148,9 +166,7 @@ export default{
 
 
 
-.img-home{
-    margin-top: 20px;
-}
+
 
 .container-button{
     display: flex;
@@ -193,7 +209,7 @@ export default{
 
 .button-add{
     width: 114px;
-    height: 40px;
+    height: 50px;
     background-color:#FFA400 ;
     border: none;
     border-radius: 4px;
@@ -223,15 +239,17 @@ export default{
 
 .block{
     
+    width: 4 90px;
     transition: 200ms;
     border-radius: 20px;
-    width: 400px;
+    padding: 30px;
     text-align: center;
-    height: 650px;
+    
 }
 
 .block:hover{
-    background-color: #575757;
+    background-color: #9b9b9b;
+    transform: translateY(-20px);
 }
 
 

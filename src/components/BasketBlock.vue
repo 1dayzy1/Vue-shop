@@ -7,10 +7,10 @@
 
             <div class="block">
 
-                <img :src="`../img/${it.img}`" >
+                <img :src="it.imageUrl" >
                  
-                <p class="name-home">{{it.name  }}</p>
-                <p class="street-home">{{ it.street }}</p>
+                <p class="name-home">{{it.title  }}</p>
+                
                 <p class="price-home">{{ it.price }}</p>
                 
                 

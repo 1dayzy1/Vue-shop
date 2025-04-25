@@ -2,7 +2,7 @@
 
     <div class="container-Call">
 
-        <p class="sale">Cлужба продаж</p>
+        <p class="sale">По всем вопросам</p>
         <p class="number-sale">+7 495 123-45-67</p>
 
 
